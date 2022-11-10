@@ -22,6 +22,7 @@ form.addEventListener('submit', function(event) {
     const [passOne, passTwo] = generateTwoPasswords(userInput);
     passOneDisp.textContent = passOne;
     passTwoDisp.textContent = passTwo;
+    document.querySelector(".copy-message").textContent =  "";
 })
 
 function getUserInput(formData) {
@@ -61,7 +62,13 @@ function generateRandomChar(string) {
 const passwordsDisplayed = document.querySelectorAll(".password")
 passwordsDisplayed.forEach(el => el.addEventListener('click', copyToClip))
 function copyToClip(event) {
+
     const generatedPass = event.target.textContent;
+    if (generatedPass === "") {
+        document.querySelector(".copy-message").textContent =  "Generate a  Password."
+    } else {
     navigator.clipboard.writeText(generatedPass)
-    console.log(generatedPass);
+    document.querySelector(".copy-message").textContent =  "Copied to Clipboard."
+    }
+    
 }
