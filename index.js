@@ -33,11 +33,11 @@ function getUserInput(formData) {
     }
 }
 
-function generateTwoPasswords(userInputObject) {
+function generateTwoPasswords({useNums, useSymbs, passLength}) {
     let passOne = "";
     let passtwo = "";
     
-    while (passOne.length < userInputObject.passLength) {
+    while (passOne.length < passLength) {
         if (useNums) {
             passOne += generateRandomChar(digits);
             passtwo += generateRandomChar(digits);
@@ -53,6 +53,27 @@ function generateTwoPasswords(userInputObject) {
     console.log(passtwo)
     return [passOne, passtwo]
 }
+
+// function generateTwoPasswords(userInputObject) {
+//     let passOne = "";
+//     let passtwo = "";
+    
+//     while (passOne.length < userInputObject.passLength) {
+//         if (useNums) {
+//             passOne += generateRandomChar(digits);
+//             passtwo += generateRandomChar(digits);
+//         }
+//         if (useSymbs) {
+//             passOne += generateRandomChar(symbols);
+//             passtwo += generateRandomChar(symbols);
+//         }
+//         passOne += generateRandomChar(alphabetLower);
+//         passtwo += generateRandomChar(alphabetLower);
+//     }
+//     console.log(passOne)
+//     console.log(passtwo)
+//     return [passOne, passtwo]
+// }
 
 function generateRandomChar(string) {
     const randomIdx = Math.floor(Math.random() * string.length)
