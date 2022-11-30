@@ -1,6 +1,8 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="responsive_style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap" rel="stylesheet">
@@ -8,13 +10,13 @@
     <body>
         <div class="wrapp">
 <div class="hero">
-    <h1><span>Generate a</span><br> random password</h1>
-    <p>Never use an insecure password again.</p>
+    <h1 class="hero-title"><span>Generate a</span><br> random password</h1>
+    <p class="hero-text">Never use an insecure password again.</p>
     <div>
 
         <form>
             <fieldset>
-                <div class="range">
+                <div class="range opt">
                     <label for="pass-length">Password Strength</label>
                     <div>
                         <span>8</span>
@@ -22,15 +24,14 @@
                         <span>16</span>
                         <div id="pass-strength">8</div>
                     </div>
-
                 </div>
 
-                <div>
+                <div class="opt">
                     <input type="checkbox" id="useSymbs" name="useSymbs" checked>
                     <label for="useSymbs">Use symbols</label>
                 </div>
 
-                <div>
+                <div class="opt">
                     <input type="checkbox" id="useNums" name="useNums" checked>
                     <label for="useNums">Use numbers</label>
                 </div>
